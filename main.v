@@ -5,7 +5,9 @@ import time
 import days
 
 fn main() {
-	all_days := []fn (string) !(string, string)
+	all_days := [
+		days.day_one,
+	]
 
 	now := time.utc()
 	mut day := 0
