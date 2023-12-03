@@ -7,6 +7,7 @@ import days
 fn main() {
 	all_days := [
 		days.day_one,
+		days.day_two,
 	]
 
 	now := time.utc()
