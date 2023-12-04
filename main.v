@@ -9,6 +9,7 @@ fn main() {
 		days.day_one,
 		days.day_two,
 		days.day_three,
+		days.day_four,
 	]
 
 	now := time.utc()
