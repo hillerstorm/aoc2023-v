@@ -32,7 +32,7 @@ pub fn day_three(input string) !(string, string) {
 	mut digit_indices := []int{}
 	mut gears := map[int][]int{}
 	for idx, chr in grid {
-		if days.digits.contains(chr) {
+		if chr in days.digits {
 			digit += chr.str()
 			digit_indices << idx
 			continue
@@ -67,7 +67,7 @@ fn is_part(digit_indices []int, digit_value int, grid []rune, deltas []int, mut 
 	mut result := false
 	for idx in arrays.map_of_indexes[int](arrays.flatten(neighbours)).keys() {
 		chr := grid[idx]
-		if chr == `.` || days.digits.contains(chr) {
+		if chr == `.` || chr in days.digits {
 			continue
 		} else if chr == `*` {
 			gears[idx] << digit_value

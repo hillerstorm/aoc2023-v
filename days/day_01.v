@@ -34,7 +34,7 @@ pub fn day_one(input string) !(string, string) {
 	lines := input.split_into_lines()
 
 	part_one := arrays.sum(lines
-		.map(it.split('').filter(days.all_numbers[..10].contains(it)))
+		.map(it.split('').filter(it in days.all_numbers[..10]))
 		.filter(it.len > 0)
 		.map((it.first() + it.last()).int()))!
 
