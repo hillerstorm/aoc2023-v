@@ -30,7 +30,3 @@ fn run_tests(day fn (input string) !(string, string), tests []TestFixture) {
 		assert part_two == test.expected_part_two
 	}
 }
-
-fn range(from int, to int) []int {
-	return []int{len: (to - from) + 1, init: index + from}
-}
