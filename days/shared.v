@@ -34,3 +34,13 @@ fn run_tests(day fn (input string) !(string, string), tests []TestFixture) {
 		}
 	}
 }
+
+fn foldr[T, R](array []T, init R, fold_op fn (acc R, elem T) R) R {
+	mut value := init
+
+	for i := array.len - 1; i >= 0; i-- {
+		value = fold_op(value, array[i])
+	}
+
+	return value
+}
