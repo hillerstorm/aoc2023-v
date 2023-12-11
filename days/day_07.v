@@ -73,7 +73,8 @@ fn rank_hand(hand []rune) int {
 
 		return 3
 	} else {
-		match values.filter(it == 2).len {
+		pairs := values.filter(it == 2).len
+		match pairs {
 			2 { return 4 }
 			1 { return 5 }
 			else {}
