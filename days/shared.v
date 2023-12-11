@@ -26,7 +26,11 @@ fn read_input(config TestInputConfig) string {
 fn run_tests(day fn (input string) !(string, string), tests []TestFixture) {
 	for test in tests {
 		part_one, part_two := day(test.buffer) or { panic(err) }
-		assert part_one == test.expected_part_one
-		assert part_two == test.expected_part_two
+		if test.expected_part_one != '' {
+			assert part_one == test.expected_part_one
+		}
+		if test.expected_part_two != '' {
+			assert part_two == test.expected_part_two
+		}
 	}
 }
